@@ -176,3 +176,5 @@ En el package.json
 Comando para user un script para la base de datos
 <br>
 `psql -U tu_usuario -d vuelos_db -f sql/init.sql`
+
+Solo para ejemplo de commit
