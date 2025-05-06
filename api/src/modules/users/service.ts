@@ -8,11 +8,11 @@ export async function getAllUsers(): Promise<User[]> {
     return result.rows
 }
 
-export async function createUser(name: string, email: string) {
+export async function createUser(name: string, email: string, password: string) {
     const id = randomUUID()
     const result = await db.query(
-        `INSERT INTO users (id, name, email, created_at) values ($1, $2, $3, NOW()) RETURNING *`,
-        [id, name, email]
+        `INSERT INTO users (id, full_name, email, password, created_at) values ($1, $2, $3, $4, NOW()) RETURNING *`,
+        [id, name, email, password]
     )
     return result.rows[0]
 }

@@ -1,9 +1,11 @@
+//Registro global de rutas
 import { Router } from 'express'
+import usersRoutes from '../modules/users/route'
+import bookingRoutes from '../modules/booking/route'
 
 const router = Router()
 
-router.get('/', (_req, res) => {
-    res.json({ message: 'API Funcionando' })
-})
+router.use('/users', usersRoutes)
+router.use('/booking', bookingRoutes)
 
 export default router
